@@ -288,7 +288,6 @@ img {
 
 .inst-small-img {
     max-width: 760px;
-    height: 315px;
     border-radius: 30px;
 }
 
@@ -470,3 +469,87 @@ img {
     }
 
 }
+
+.payment-btn {
+    position: relative;
+    width: 250px;
+    height: 70px;
+    border: none;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #f68aa5, #ff9eb5);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(246, 138, 165, 0.3);
+    overflow: hidden;
+  }
+
+  .payment-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: all 0.6s ease;
+  }
+
+  .payment-btn:hover::before {
+    left: 100%;
+  }
+
+  .payment-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(246, 138, 165, 0.5);
+    background: linear-gradient(135deg, #ff9eb5, #f68aa5);
+  }
+
+  .payment-content {
+    display: none;
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    border: 2px solid #f68aa5;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(246, 138, 165, 0.2);
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 460px) {
+    .payment-btn {
+      width: 90%;
+      max-width: 300px;
+      height: 60px;
+      font-size: 16px;
+    }
+
+    .payment-content {
+      width: 90%;
+      padding: 15px;
+    }
+  }
