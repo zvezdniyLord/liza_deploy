@@ -13,6 +13,97 @@ img {
     display: block;
 }
 
+/* Стили для бонусной секции */
+.bonus-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .bonus-btn {
+    position: relative;
+    width: 250px;
+    height: 70px;
+    border: none;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #e8d9cf, #d3bfae);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .bonus-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: all 0.6s ease;
+  }
+
+  .bonus-btn:hover::before {
+    left: 100%;
+  }
+
+  .bonus-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .bonus-content {
+    display: none;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 460px) {
+    .bonus-btn {
+      width: 90%;
+      max-width: 300px;
+      height: 60px;
+      font-size: 16px;
+    }
+
+    .bonus-content {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+
 .header {
     max-width: 100%;
 }
@@ -143,9 +234,41 @@ img {
     cursor: pointer;
 }
 
+  .course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 25px;
+  }
+
+  .course-content-block {
+    padding: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+
+.p {
+    font-size: 14px;
+    max-width: 100%;
+    font-weight: 700;
+}
+
+  .course-content-block.open {
+    max-height: 500px;
+    padding: 10px;
+  }
+
 .inst {
     background-color: #EDECEA;
     width: 100%;
+    margin-top: 50px;
 }
 
 .inst-blocks {
@@ -223,7 +346,8 @@ img {
 }
 
 .payment-text {
-    font-size: 64px;
+    font-size: 42px;
+    text-align: center;
 }
 
 .payment-btn {
@@ -243,7 +367,7 @@ img {
     border-radius: 25px;
     flex-direction: column;
     width: 1380px;
-    height: 700px;
+    height: 1000px;
     align-items: center;
     margin-bottom: 480px;
 }
@@ -263,31 +387,59 @@ img {
         font-size: 32px;
     }
 
+    .header-left {
+        font-size: 14px;
+    }
+
+    .header-right {
+        font-size: 14px;
+    }
+
+    .inst-blocks {
+        flex-wrap: nowrap;
+    }
+
     .inst-small-img {
         max-width: 160px;
     }
 
     .header-blocks {
         max-width: 100%;
-        flex-direction: column;
     }
 
     .header-center {
-        max-width: 80%;
-        font-size: 32px;
+        max-width: 40%;
+        font-size: 16px;
+        height: 115px;
     }
 
     .how-works-title {
         font-size: 32px;
     }
 
+    .inst-main {
+        max-width: 345px;
+    }
+
     .how-works-img {
-        max-width: 320px;
+        max-width: 155px;
+    }
+
+    .inst-big-img {
+        max-width: 160px;
     }
 
     .how-works-block-text {
-        font-size: 20px;
+        font-size: 12px;
         text-align: center;
+        line-height: 42px;
+    }
+
+    .how-works-block {
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin-top: 15px;
+        font-weight: 700;
     }
 
     .inst-title {
@@ -300,8 +452,17 @@ img {
         padding: 15px;
     }
 
+    .payment {
+        margin-top: 50px;
+    }
+
     .payment-text {
         text-align: center;
+        font-size: 26px;
+    }
+
+    .payment-title {
+        font-size: 28px;
     }
 
     .course-btn-open {
