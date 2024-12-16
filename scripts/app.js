@@ -20,7 +20,10 @@ courseBtns.forEach((btn, index) => {
 document.querySelector('.bonus-btn').addEventListener('click', (event) => {
     const bonusContent = document.querySelector('.bonus-content');
     if (bonusContent.style.display === 'none' || bonusContent.style.display === '') {
-      bonusContent.style.display = 'block';
+      bonusContent.style.display = 'flex';
+      bonusContent.style.justifyContent = 'center';
+      bonusContent.style.alignItems = 'center';
+      bonusContent.style.flexDirection = 'column';
       event.target.textContent = 'Скрыть бонус';
     } else {
       bonusContent.style.display = 'none';
