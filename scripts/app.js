@@ -30,3 +30,12 @@ document.querySelector('.bonus-btn').addEventListener('click', (event) => {
       event.target.textContent = 'Показать бонус';
     }
   });
+  window.addEventListener('scroll', function() {
+    const mainQuote = document.querySelector('.main-quote');
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const triggerPosition = mainQuote.offsetTop - (window.innerHeight * 0.8); // Можете отрегулировать коэффициент 0.8 для изменения точки срабатывания
+
+    if (scrollPosition > triggerPosition) {
+      mainQuote.classList.add('visible');
+    }
+  });

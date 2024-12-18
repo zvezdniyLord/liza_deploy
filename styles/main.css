@@ -151,6 +151,77 @@ img {
 
 .main-photo {
     max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-photo-text {
+  text-align: center;
+  max-width: 100%;
+  margin-top: 32px;
+  font-family: 'Playfair Display', serif; /* Привлекательный шрифт с засечками */
+  font-size: 3rem; /* Увеличенный размер шрифта */
+  font-weight: 700;
+  background: linear-gradient(45deg, #FF6B6B, #FFA07A, #FFD700); /* Красивый градиент */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textAnimation 5s infinite alternate;
+  width: 1368px;
+}
+
+.main-text-block {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #7B8FA1, #CBB279, #A0C3D2, #CBB279, #7B8FA1);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulsatingGradient 10s ease infinite;
+  opacity: 0;
+  text-align: center;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.main-quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulsatingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .how-works {
@@ -440,6 +511,10 @@ img {
 
     .inst-small-img {
         max-width: 160px;
+    }
+
+    .main-quote, .main-photo-text {
+      font-size: 24px;
     }
 
     .header-blocks {
