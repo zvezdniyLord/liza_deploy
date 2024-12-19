@@ -260,6 +260,10 @@ img {
 
 }
 
+.img-static {
+  max-width: 100%;
+}
+
 .course {
     background-color: #FEFFFA;
 }
@@ -359,12 +363,10 @@ img {
 
 .inst-small-img {
     max-width: 760px;
-    border-radius: 30px;
 }
 
 .inst-big-img {
     max-width: 760px;
-    border-radius: 30px;
 }
 
 .inst-small-imgs {
